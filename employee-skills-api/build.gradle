@@ -1,0 +1,50 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'employee_skills.api'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.6'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:2.5.6'
+
+    // MyBatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+
+    // PostgreSQL
+    implementation 'org.postgresql:postgresql:42.3.1'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    // Junit
+    implementation 'junit:junit:4.13.2'
+
+    // swagger
+    implementation "io.springfox:springfox-swagger2:3.0.0"
+    implementation "io.springfox:springfox-swagger-ui:3.0.0"
+
+    // Sub Modules
+    implementation project(':employee-skills-core')
+    implementation project(':employee-skills-backend')
+}
+
+test {
+    useJUnitPlatform()
+}

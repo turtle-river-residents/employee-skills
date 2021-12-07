@@ -1,0 +1,23 @@
+.es_body {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.es_body:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.es_button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.es_button button {
+    margin-right: 20px;
+}

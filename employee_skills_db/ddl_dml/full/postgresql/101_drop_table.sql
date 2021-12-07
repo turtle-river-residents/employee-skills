@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS employee_skills;
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS skill;
+DROP TABLE IF EXISTS genre;

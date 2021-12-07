@@ -1,0 +1,29 @@
+#nav {
+    list-style: none;
+    overflow: hidden;
+}
+
+#nav li {
+    width: 140px;
+    text-align: center;
+    background-color: aquamarine;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 0px;
+}
+
+#nav li a {
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+
+#nav li a:hover {
+    font-weight: 500;
+}
+
+#nav {
+    padding-left: 0px;
+    margin: 0px
+}

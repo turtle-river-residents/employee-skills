@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+
+<generatorConfiguration>
+    <context id="MySQLTables" targetRuntime="MyBatis3">
+
+        <!-- This is the Lombok plugin. -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.LombokPlugin">
+            <property name="@Data" value="true"/>
+            <property name="@Builder" value="true"/>
+            <property name="@SuperBuilder" value="false"/>
+            <property name="@Value" value="true"/>
+            <property name="@AllArgsConstructor" value="false"/>
+            <property name="@NoArgsConstructor" value="false"/>
+            <property name="@Accessors(chain = true)" value="false"/>
+            <property name="supportSuperBuilderForIdea" value="false"/>
+        </plugin>
+
+        <!-- This is the plugin for handling the annotation of the mapper classes. -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.MapperAnnotationPlugin">
+            <property name="@Mapper" value="true"/>
+            <property name="@Repository" value="false"/>
+        </plugin>
+
+        <commentGenerator>
+            <!-- The date with the comment on the generated Java files is suppressed. -->
+            <property name="suppressAllComments" value="false"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!-- JDBC Connection Information -->
+        <jdbcConnection driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://localhost:5432/employee_skills"
+                        userId="postgres"
+                        password="postgres">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="useJSR310Types" value="true"/>
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="employee_skills.backend.persistence.database.postgresql.table"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="employee_skills.backend.persistence.database.postgresql.table"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="employee_skills.backend.persistence.database.postgresql.table"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--        <table tableName="genre" domainObjectName="DbGenre" mapperName="DbGenreMapper" modelType="flat">-->
+        <!--            <columnOverride column="insert_datetime" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="update_datetime" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+
+        <!--        <table tableName="skill" domainObjectName="DbSkill" mapperName="DbSkillMapper" modelType="flat">-->
+        <!--            <columnOverride column="insert_datetime" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="update_datetime" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+
+        <!--        <table tableName="employee" domainObjectName="DbEmployee" mapperName="DbEmployeeMapper" modelType="flat">-->
+        <!--            <columnOverride column="join_year" javaType="java.time.Year"/>-->
+        <!--            <columnOverride column="insert_datetime" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="update_datetime" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+
+        <!--        <table tableName="employee_skills" domainObjectName="DbEmployeeSkills" mapperName="DbEmployeeSkillsMapper" modelType="flat">-->
+        <!--            <columnOverride column="insert_datetime" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="update_datetime" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+
+    </context>
+</generatorConfiguration>

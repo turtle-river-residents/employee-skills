@@ -1,0 +1,44 @@
+version: '3'
+services:
+  nginx:
+    container_name: employee_skills_web
+    build:
+      context: ./docker/docker-web
+    restart: always
+    ports:
+      - 80:80
+    hostname: container_employee_skills_web_hostname
+    volumes:
+      - ./employee-skills-web/build:/usr/share/nginx/html
+    links:
+      - app
+  app:
+    container_name: employee_skills_api
+    restart: always
+    build:
+      context: ./docker/docker-api
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    volumes:
+      - ./employee-skills-api:/employee-skills-api
+    working_dir: '/employee-skills-api'
+    tty: true
+    hostname: container_employee_skills_api_hostname
+    command: java -jar /employee-skills-api/build/libs/employee-skills-api.jar
+  postgres:
+    container_name: employee_skills_db
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: employee_skills_db
+    ports:
+      - 15432:5432
+    volumes:
+      - /usr/local/var/postgres:/var/lib/postgresql/data
+      - ./employee_skills_db/ddl_dml/full/postgresql:/docker-entrypoint-initdb.d
+volumes:
+  database:
+    driver: local

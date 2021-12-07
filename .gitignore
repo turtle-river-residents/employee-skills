@@ -1,0 +1,10 @@
+/.gradle/
+/employee-skills-api/.gradle/
+/employee-skills-api/build/
+/employee-skills-api/gradle/
+/employee-skills-backend/.gradle/
+/employee-skills-backend/build/
+/employee-skills-core/build/
+/employee-skills-web/build/
+/employee-skills-web/node_modules/
+/gradle/

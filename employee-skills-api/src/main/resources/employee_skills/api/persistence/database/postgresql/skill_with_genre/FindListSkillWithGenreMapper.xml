@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employee_skills.api.persistence.database.postgresql.skill_with_genre.FindListSkillWithGenreMapper">
+
+    <select id="findBy" parameterType="string"
+            resultType="employee_skills.core.domain.model.skill.SkillWithGenre">
+        SELECT
+            g.genre_id,
+            g.genre_name,
+            s.skill_id,
+            s.skill_name
+        FROM
+            employee_skills es
+                INNER JOIN skill s ON es.skill_id = s.skill_id
+                INNER JOIN genre g ON s.genre_id = g.genre_id
+        WHERE
+            es.employee_no = #{employeeNo, jdbcType=VARCHAR}
+        ORDER BY
+            s.skill_id
+    </select>
+</mapper>

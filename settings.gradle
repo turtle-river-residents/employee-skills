@@ -1,0 +1,5 @@
+rootProject.name = 'employee-skills'
+include 'employee-skills-api'
+include 'employee-skills-core'
+include 'employee-skills-backend'
+

@@ -1,0 +1,7 @@
+rootProject.name = 'employee-skills-api'
+
+include(':employee-skills-core')
+project(':employee-skills-core').projectDir = new File('../employee-skills-core')
+
+include(':employee-skills-backend')
+project(':employee-skills-backend').projectDir = new File('../employee-skills-backend')

@@ -1,0 +1,11 @@
+#employeeTable td:nth-of-type(1) {
+    width: 100px;
+}
+
+#employeeTable td:nth-of-type(3) {
+    width: 90px;
+}
+
+#employeeTable td:nth-of-type(5) {
+    width: 50px;
+}

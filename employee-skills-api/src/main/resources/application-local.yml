@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:15432/employee_skills_db
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case:
+      true
+
+cross:
+  origin:
+    protocols:
+      http
+    ips:
+      localhost,dagraeg
+    ports:
+      80,3000
+    urls:
+      http://localhost
+    methods:
+      GET,POST,PUT,DELETE
+
+logging:
+  level:
+    org:
+      springframework: WARN
+    employee_skills:
+      api:
+        persistence:
+          database: DEBUG
