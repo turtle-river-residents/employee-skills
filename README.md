@@ -48,6 +48,6 @@
 3. How to build the Docker and run
    ```shell
    docker-compose build
-   dokcer-compose up -d
+   docker-compose up -d
    ```
 
