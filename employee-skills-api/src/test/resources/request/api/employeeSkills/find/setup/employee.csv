@@ -1,0 +1,2 @@
+employee_no,last_name,first_name,join_year,insert_datetime,update_datetime,insert_user_id,update_user_id
+ABC00001,Last1,First1,2010,2021-04-01 09:00:00.000000,2021-04-01 09:00:00.000000,ABC00001,ABC00001
